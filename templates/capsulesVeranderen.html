@@ -1,0 +1,46 @@
+{% extends "layout.html"%}
+{% block title %}Maak een keuze{% endblock %}
+
+{% block headTitle %}
+   <h1 class="headTitle">verander capsule</h1>
+{% endblock %}
+
+{% block content %}
+<form action="/veranderenCapsules/changed" method="POST">
+    <select name="rij1" class="fancy-select">
+
+         {% for capsule in Capsules %}
+            <option>{{ kies_capsule(capsule[0]) }}</option>
+
+        {% endfor %}
+    </select>
+    <select name="rij2" class="fancy-select">
+         {% for capsule in Capsules %}
+            <option>{{ kies_capsule(capsule[0]) }}</option>
+        {% endfor %}
+    </select><br>
+    <select name="rij3" class="fancy-select">
+         {% for capsule in Capsules %}
+            <option>{{ kies_capsule(capsule[0]) }}</option>
+        {% endfor %}
+    </select>
+    <select name="rij4" class="fancy-select">
+         {% for capsule in Capsules %}
+            <option>{{ kies_capsule(capsule[0]) }}</option>
+        {% endfor %}
+    </select><br>
+    <input type="submit" value="Submit" class="selectButton">
+</form>
+
+
+
+{% endblock %}
+
+{% block Buttons %}
+<footer>
+        <ul>
+            <a href="/koffie"><li class="active gotopage"><p>Koffie</p><img src="../static/img/CoffeeWhite.svg" class="coffeeIcon"></li></a>
+            <li class="inactive page"><p>Capsules</p><img src="../static/img/capsule.png" class="timerIcon"></li>
+        </ul>
+</footer>
+{% endblock %}

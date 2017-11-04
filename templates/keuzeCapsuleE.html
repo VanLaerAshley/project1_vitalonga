@@ -1,0 +1,31 @@
+{% extends "layout.html"%}
+{% block title %}Maak een keuze{% endblock %}
+
+{% block headTitle %}
+    <h1 class="headTitle">Capsule keuze</h1>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Kies de gewenste smaak.</h1>
+    {% for capsule in Capsules %}
+        <div class="list-item">
+        <a  href="/gekozenCapsuleLungo/lungo/{{ capsule[1] }}">
+
+                <div class="capsuleKeuze">
+                {{ capsule[0]  }}
+                </div>
+
+        </a>
+        </div><br>
+    {% endfor %}
+
+
+
+{% endblock %}
+
+
+
+
+MySQL - @ashleypi
+

@@ -1,0 +1,59 @@
+{% from 'macros/macro.html' import kies_capsule with context %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vitalonga | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+<body onload="myFunction()">
+    <div id="loader"></div>
+<div style="display:none;" id="myDiv">
+    <header class="Section1" >
+        <img src="{{ url_for('static', filename = 'img/logo.svg') }}" class="logo">
+        <span class="menu"> <img src="{{ url_for('static', filename = 'img/settings.svg') }}" class="OpenIcon"></span>
+        {% block headTitle %}{% endblock %}
+    </header>
+
+    <section>
+        <img src="{{ url_for('static', filename = 'img/cirkel.svg') }}" class="cirkel">
+        {% block content %}{% endblock %}
+    </section>
+
+<div class="overlay">
+        <span class="menu"> <img src="{{ url_for('static', filename = 'img/close.svg') }}" class="CloseIcon"></span>
+        <h3>Instellingen</h3>
+        <a href="/koffie"> <img src="{{ url_for('static', filename = 'img/homeIcon.png') }}" class="HomeIcon"></a>
+        <div class="lineTop"></div>
+        <ul>
+            <li><a href="/veranderenCapsules">Koffiesoorten wijzigen</a></li>
+        </ul>
+        <div class="line"></div>
+        <ul>
+            <li><a href="#">Koffie gebruik</a></li>
+        </ul>
+        <a href="/uit" class="turnOffButton">Zet machine uit</a>
+    <p class="created">Created by <a href="https://github.com/ashleyvanlaer/project_1">Ashley Van Laer</a></p>
+</div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src="{{ url_for('static', filename = 'script/settings.js') }}"></script>
+
+{% block Buttons %}{% endblock %}
+</div>
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+</html>

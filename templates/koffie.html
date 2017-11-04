@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block title %}Koffie zetten{% endblock %}
+
+{% block headTitle %}
+    <script src="../static/script/main.js" class="aanspreking"></script>
+{% endblock %}
+
+{% block content %}
+        <h1>Maak een keuze.</h1>
+        <ul class="keuze">
+            <div class="mobile">
+                <a href="/keuzeCapsule/espresso" class="espresso">
+                    <li class="espressoButton">
+                        <img src="../static/img/Coffee.svg"><br>
+                        <p>Espresso</p>
+                    </li>
+                </a>
+                <a href="/keuzeCapsule/lungo" class="lungo">
+                    <li class="lungoButton">
+                        <img src="../static/img/Coffee.svg"><br>
+                        <p>Lungo</p>
+                    </li>
+                </a>
+            </div>
+        </ul>
+{% endblock %}
+
+{% block Buttons %}
+<footer>
+        <ul>
+            <li class="active page"><p>Koffie</p><img src="../static/img/CoffeeWhite.svg" class="coffeeIcon"></li>
+            <a href="/veranderenCapsules"><li class="inactive gotopage"><p>Capsules</p><img src="../static/img/capsule.png" class="timerIcon"></li></a>
+        </ul>
+</footer>
+{% endblock %}
+
+
+
+
+
